@@ -1,0 +1,25 @@
+function onLoad() {
+
+// Check if the user does not have the 'admin' role
+
+if (!g_user.hasRole('admin')) {
+
+var options = Array.from(g_form.getControl('state')); // Set your target field name
+
+var hiddenOptions = ['-4', '2', '8', '10', '3', '11', '7']; // Add choice values to hide for non-admins
+
+  
+
+options.forEach(function(e) {
+
+if (hiddenOptions.indexOf(e.value) > -1) {
+
+e.hidden = true;
+
+}
+
+});
+
+}
+
+}
